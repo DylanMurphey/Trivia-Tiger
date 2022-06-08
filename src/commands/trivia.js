@@ -15,7 +15,7 @@ module.exports = {
         // const roundCount = interaction.options.getInteger('rounds');
         roundCount = interaction.options.getInteger('rounds');
 
-        if(!roundCount)
+        if(roundCount == null)
         {
             roundCount = DEFAULT_GAME_LENGTH;
         }
