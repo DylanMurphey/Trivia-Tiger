@@ -1,5 +1,4 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageActionRow, MessageButton } = require('discord.js');
 const { SendQuizQuestion } = require('./lib/postquiz');
 
 module.exports = {
