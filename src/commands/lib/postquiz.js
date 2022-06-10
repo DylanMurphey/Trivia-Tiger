@@ -81,7 +81,7 @@ SendQuizQuestion: async function SendQuizQuestion(interaction, quizQuestion){
         setTimeout(async () => {
           await message.delete();
           await interaction.deleteReply();
-          await interaction.channel.send(`The correct answer was ${question.choices[question.correct]}`);
+          await interaction.channel.send(`The correct answer was ${quizQuestion.choices[quizQuestion.correct]}/`);
           resolve();
         }, duration);
       }
