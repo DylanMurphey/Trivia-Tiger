@@ -26,4 +26,6 @@ Then you are all set! Run `node ./src/index.js` from the `/TriviaTiger` director
 
 [PixelTail Games](https://pixeltailgames.com) for [OpenTDB](https://opentdb.com/)
 
+[Avik Rao](https://github.com/AvikRao)
+
 Mom and Dad :heart:
