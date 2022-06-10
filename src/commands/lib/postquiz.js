@@ -2,15 +2,6 @@ const { MessageActionRow, MessageButton } = require('discord.js');
 
 const duration = 10000;
 
-const quizQuestion = {
-    "category":"Category goes here",
-    "question":"Why did the chicken cross the road?",
-    "choices":["Here is the button for the first answer.",
-               "Here is the button for the second answer.",
-               "Here is the button for the third answer.",
-               "Here is the button for the fourth answer."]
-}
-
 // const embed = {
 //     'title': quizQuestion.question,
 //     'color': 16744960,
