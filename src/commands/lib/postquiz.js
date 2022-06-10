@@ -1,6 +1,6 @@
 const { MessageActionRow, MessageButton } = require('discord.js');
 
-const duration = 1500;
+const duration = 10000;
 
 const quizQuestion = {
     "category":"Category goes here",
@@ -11,40 +11,51 @@ const quizQuestion = {
                "Here is the button for the fourth answer."]
 }
 
-const embed = {
-    'title': quizQuestion.question,
-    'color': 16744960,
-    'thumbnail': {
-        'url': 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/53/thinking-face_1f914.png',
-    },
-    'image': {
-        'url': 'https://i.imgur.com/O37Bdpn.png',
-    },
-    'fields': [
-        {
-            'name': 'Option 1:',
-            'value': quizQuestion.choices[0],
-        },
-        {
-            'name': 'Option 2:',
-            'value': quizQuestion.choices[1],
-        },
-        {
-            'name': 'Option 3:',
-            'value': quizQuestion.choices[2],
-        },
-        {
-            'name': 'Option 4:',
-            'value': quizQuestion.choices[3],
-        },
-    ],
-    footer: {
-        text:  quizQuestion.category + ' - ' + duration/1000 + ' seconds',
-    },
-};
+// const embed = {
+//     'title': quizQuestion.question,
+//     'color': 16744960,
+//     'thumbnail': {
+//         'url': 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/53/thinking-face_1f914.png',
+//     },
+//     // 'image': {
+//     //     'url': 'https://i.imgur.com/O37Bdpn.png',
+//     // },
+//     // 'fields': [
+//     //     {
+//     //         'name': 'Option 1:',
+//     //         'value': quizQuestion.choices[0],
+//     //     },
+//     //     {
+//     //         'name': 'Option 2:',
+//     //         'value': quizQuestion.choices[1],
+//     //     },
+//     //     {
+//     //         'name': 'Option 3:',
+//     //         'value': quizQuestion.choices[2],
+//     //     },
+//     //     {
+//     //         'name': 'Option 4:',
+//     //         'value': quizQuestion.choices[3],
+//     //     },
+//     // ],
+//     footer: {
+//         text:  quizQuestion.category + ' - ' + duration/1000 + ' seconds',
+//     },
+// };
 
 module.exports = {
-SendQuizQuestion: async function SendQuizQuestion(interaction){
+SendQuizQuestion: async function SendQuizQuestion(interaction, quizQuestion){
+    const embed = {
+        'title': quizQuestion.question,
+        'color': 16744960,
+        'thumbnail': {
+            'url': 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/53/thinking-face_1f914.png',
+        },
+        footer: {
+            text:  quizQuestion.category + ' - ' + duration/1000 + ' seconds',
+        },
+    };
+
     const row1 = new MessageActionRow()
         .addComponents(
             new MessageButton()
@@ -72,7 +83,7 @@ SendQuizQuestion: async function SendQuizQuestion(interaction){
 
     message = await interaction.channel.send({embeds: [embed], components: [row1,row2]});
 
-    await setTimeout(() => {message.delete();interaction.deleteReply();}, duration);
+    await setTimeout(() => {message.delete();interaction.deleteReply();interaction.channel.send(`The correct answer was ${question.choices[question.correct]}`);}, duration);
 
 }
 }
