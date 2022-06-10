@@ -2,7 +2,7 @@
 Trivia Tiger is a Discord trivia bot for servers both small and large written using [discord.js](https://github.com/discordjs/discord.js) and the [OpenTDB](https://opentdb.com/) database.
 
 ## Installation
-1. Install [Node.js version 16.x or higher](https://nodejs.org/en/). While Node is preinstalled on many operatings systems, certain elements introduced in discord.js v13, which are critical to Trivia Tiger, require Node version 16 or higher.
+1. Install [Node.js version 16.x or higher](https://nodejs.org/en/). While Node is preinstalled on many operatings systems, certain elements introduced in discord.js v13 which are critical to Trivia Tiger require Node version 16 or higher.
 2. Download and extract [the latest version of this repository](https://github.com/DylanMurphey/Trivia-Tiger/archive/refs/heads/main.zip).
 3. Navigate into `/Trivia-Tiger-main`
 4. In a terminal, run `npm install --prefix ./src` to automatically install dependencies
