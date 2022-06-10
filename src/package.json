@@ -4,5 +4,23 @@
     "@discordjs/rest": "^0.5.0",
     "discord-api-types": "^0.33.5",
     "discord.js": "^13.8.0"
-  }
+  },
+  "name": "trivia-tiger",
+  "version": "0.1.0",
+  "description": "A discord.js bot written in discord.js using the OpenTDB database",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DylanMurphey/Trivia-Tiger.git"
+  },
+  "author": "Dylan Murphey",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/DylanMurphey/Trivia-Tiger/issues"
+  },
+  "homepage": "https://github.com/DylanMurphey/Trivia-Tiger#readme"
 }
