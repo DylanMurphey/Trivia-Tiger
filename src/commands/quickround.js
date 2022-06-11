@@ -4,8 +4,8 @@ const { GetQuestions }     = require('./lib/getquestions');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('testq')
-        .setDescription('Display a test question'),
+        .setName('quickround')
+        .setDescription('Play a quick, one-round question!'),
     async execute(interaction) {
         let channel = interaction.channel;
         let question = await GetQuestions(interaction);
