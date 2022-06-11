@@ -88,13 +88,13 @@ SendQuizQuestion: async function SendQuizQuestion(interaction, quizQuestion){
         if(responses.winners.includes(i.user) || responses.losers.includes(i.user)) {
             i.reply({ content: "You're already locked in! Feel free to dismiss this message.", ephemeral: true });
         } else {
+            if(i.customId == quizQuestion.correct) {
+                responses.winners.push(i.user);
+            } else {
+                responses.losers.push(i.user);
+            }
+            
             i.reply({ content: `Got it. Locked in for \`${quizQuestion.choices[i.customId]}\`. Feel free to dismiss this message.`, ephemeral: true });
-        }
-
-        if(i.customId == quizQuestion.correct) {
-            responses.winners.push(i.user);
-        } else {
-            responses.losers.push(i.user);
         }
     });
 
