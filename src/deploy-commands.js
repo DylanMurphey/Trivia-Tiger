@@ -10,14 +10,14 @@ const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('
 
 //comment out to clear commands
 for (const file of commandFiles) {
-	const filePath = path.join(commandsPath, file);
-	const command = require(filePath);
-	commands.push(command.data.toJSON());
+    const filePath = path.join(commandsPath, file);
+    const command = require(filePath);
+    commands.push(command.data.toJSON());
 }
 
 const rest = new REST({ version: '9' }).setToken(token);
 
 //use applicationGuildCommands to limit commands to test server
 rest.put(Routes.applicationCommands(clientId, guildId), { body: commands })
-	.then(() => console.log('Successfully registered application commands.'))
-	.catch(console.error);
+    .then(() => console.log('Successfully registered application commands.'))
+    .catch(console.error);

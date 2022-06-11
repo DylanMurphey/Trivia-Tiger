@@ -5,13 +5,13 @@ const DEFAULT_GAME_LENGTH = 5;
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('trivia')
-		.setDescription('Create a game of Trivia Tiger!')
+    data: new SlashCommandBuilder()
+        .setName('trivia')
+        .setDescription('Create a game of Trivia Tiger!')
         .addIntegerOption(option =>
             option.setName('rounds')
                 .setDescription('Choose from 1-10 rounds (5 by default)')),
-	async execute(interaction) {
+    async execute(interaction) {
         // const roundCount = interaction.options.getInteger('rounds');
         roundCount = interaction.options.getInteger('rounds');
 
@@ -31,5 +31,5 @@ module.exports = {
             //FUN STUFF GOES HERE
 
         }
-	},
+    },
 };
