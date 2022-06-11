@@ -42,7 +42,7 @@ module.exports = {
 			}
 		};
 
-		question = await getData(openTDBapi);
+		let question = await getData(openTDBapi);
         console.log(question);
         return question;
     }
