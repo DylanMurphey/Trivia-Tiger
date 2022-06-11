@@ -29,7 +29,7 @@ module.exports = {
             }
         }
         
-        if(responses.losers.length >= 0) {
+        if(responses.losers.length > 0) {
             messageContent += "\nLosers:";
             for (i in responses.losers) {
                 messageContent += ` <@${responses.losers[i].id}>`;
