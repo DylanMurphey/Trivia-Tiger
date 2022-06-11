@@ -36,12 +36,12 @@ client.on('interactionCreate', async interaction => {
 });
 
 
-client.on('interactionCreate', async interaction => {
-    if (!interaction.isButton()) return;
-    // interaction.channel.send(`<@${interaction.member.user.id}> locked in for ${interaction.customId}`);
+// client.on('interactionCreate', async interaction => {
+//     if (!interaction.isButton()) return;
+//     // interaction.channel.send(`<@${interaction.member.user.id}> locked in for ${interaction.customId}`);
 
-    interaction.reply({ content: `Got it. Locked in for ${interaction.customId}. Feel free to dismiss this message.`, ephemeral: true });
-});
+//     interaction.reply({ content: `Got it. Locked in for ${interaction.customId}. Feel free to dismiss this message.`, ephemeral: true });
+// });
 
 // Login to Discord with your client's token
 client.login(token);
