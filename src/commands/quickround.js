@@ -7,14 +7,21 @@ module.exports = {
         .setName('quickround')
         .setDescription('Play a quick, one-question round!'),
     async execute(interaction) {
+        let localCallId = GLOBAL_CALLS++;
+
+        console.log(`#${localCallId} - START quickround`);
+
         let channel = interaction.channel;
         let question = await GetQuestions(interaction);
-        let responses = await SendQuizQuestion(interaction,question);
+        let quizReturnPackage = await SendQuizQuestion(interaction,question);
+
+        let responses = quizReturnPackage.responses;
+        let originalMessage = quizReturnPackage.message;
 
         let messageContent = "";
 
         if(responses.winners.length == 0) {
-            messageContent += "Nobody got it right. :( You'll get 'em next time!";
+            messageContent += "Nobody got it right, you've got it next time!";
         } else {
             messageContent += "Congratulations to";
             
@@ -30,12 +37,14 @@ module.exports = {
         }
         
         if(responses.losers.length > 0) {
-            messageContent += "\nLosers:";
+            messageContent += "\nNice try:";
             for (i in responses.losers) {
                 messageContent += ` <@${responses.losers[i].id}>`;
             }
         }
 
-        channel.send(messageContent);
+        originalMessage.reply(messageContent);
+
+        console.log(`#${localCallId} - STOP quickround`);
     },
 };

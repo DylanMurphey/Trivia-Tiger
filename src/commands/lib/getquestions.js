@@ -44,7 +44,6 @@ module.exports = {
         };
 
         let question = await getData(openTDBapi);
-        console.log(question);
         return question;
     }
     }
