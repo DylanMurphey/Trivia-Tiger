@@ -1,38 +1,6 @@
 const { MessageActionRow, MessageButton } = require('discord.js');
 
-const DURATION = 10000;
-
-// const embed = {
-//     'title': quizQuestion.question,
-//     'color': 16744960,
-//     'thumbnail': {
-//         'url': 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/53/thinking-face_1f914.png',
-//     },
-//     // 'image': {
-//     //     'url': 'https://i.imgur.com/O37Bdpn.png',
-//     // },
-//     // 'fields': [
-//     //     {
-//     //         'name': 'Option 1:',
-//     //         'value': quizQuestion.choices[0],
-//     //     },
-//     //     {
-//     //         'name': 'Option 2:',
-//     //         'value': quizQuestion.choices[1],
-//     //     },
-//     //     {
-//     //         'name': 'Option 3:',
-//     //         'value': quizQuestion.choices[2],
-//     //     },
-//     //     {
-//     //         'name': 'Option 4:',
-//     //         'value': quizQuestion.choices[3],
-//     //     },
-//     // ],
-//     footer: {
-//         text:  quizQuestion.category + ' - ' + duration/1000 + ' seconds',
-//     },
-// };
+const DURATION = 15000;
 
 module.exports = {
 SendQuizQuestion: async function SendQuizQuestion(interaction, quizQuestion){
@@ -40,7 +8,7 @@ SendQuizQuestion: async function SendQuizQuestion(interaction, quizQuestion){
         'title': quizQuestion.question,
         'color': 16744960,
         'thumbnail': {
-            'url': 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/53/thinking-face_1f914.png',
+            'url': 'https://yarharalc.neocities.org/ttassets/eyeglasstiger.png',
         },
         footer: {
             text:  quizQuestion.category + ' - ' + DURATION/1000 + ' seconds',
@@ -70,13 +38,29 @@ SendQuizQuestion: async function SendQuizQuestion(interaction, quizQuestion){
                 .setStyle('PRIMARY'),
         );
 
+    const buttonRows = [row1,row2];
+
     await interaction.reply({ content: 'Quiz running...'});
 
     let message = await interaction.channel.send({
         embeds: [embed],
-        components: [row1,row2]
+        components: buttonRows
     });
 
+    // update buttons for edit
+    buttonRows.forEach((row) => {
+        row.components.forEach((button) => {
+            button.setDisabled(true);
+        })
+    });
+
+    //update embed for edit
+    embed.thumbnail.url = 'https://yarharalc.neocities.org/ttassets/sleepytiger.png'; //sleeping tiger emoji
+    embed.fields = [{
+        'name':'Correct Answer',
+        'value':quizQuestion.choices[quizQuestion.correct]
+    }];
+    
     let responses = {
         'winners':[],
         'losers':[],
@@ -100,14 +84,19 @@ SendQuizQuestion: async function SendQuizQuestion(interaction, quizQuestion){
 
     await new Promise(resolve => {
         setTimeout(async () => {
-          await message.delete();
-          await interaction.deleteReply();
-          await interaction.channel.send(`The correct answer was \`${quizQuestion.choices[quizQuestion.correct]}\`.`);
-          resolve();
+            await message.edit({
+                content: "🐯 Time's up!",
+                embeds: [embed],
+                components: buttonRows
+            });
+
+            await interaction.deleteReply();
+            // await interaction.channel.send(`The correct answer was \`${quizQuestion.choices[quizQuestion.correct]}\`.`);
+            resolve();
         }, DURATION);
         }
     )
 
-    return responses;
+    return {responses, message};
 }
 }
