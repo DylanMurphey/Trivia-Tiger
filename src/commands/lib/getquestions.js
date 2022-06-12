@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 const openTDBapi = 'https://opentdb.com/api.php?amount=1&type=multiple&encode=base64';
 
 function cleanupTrivia(input) {
@@ -43,7 +44,6 @@ module.exports = {
         };
 
         let question = await getData(openTDBapi);
-        console.log(question);
         return question;
     }
     }
