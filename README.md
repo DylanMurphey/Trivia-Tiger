@@ -1,4 +1,4 @@
-# Trivia Tiger!
+# Trivia Tiger (BETA)
 Trivia Tiger is a Discord trivia bot for servers both small and large written using [discord.js](https://github.com/discordjs/discord.js) and the [OpenTDB](https://opentdb.com/) database.
 
 ### [Add to your server](https://discord.com/api/oauth2/authorize?client_id=806067587091398677&permissions=274877908992&scope=bot%20applications.commands)
@@ -7,11 +7,14 @@ Note: the above invite link only includes permissions *currently* necessary for 
 ## Reporting an issue
 If you notice an unexpected behavior, I would very much appreciate you [opening an issue](https://github.com/DylanMurphey/Trivia-Tiger/issues/new/choose) at this GitHub page or contacting me at the Twitter or email linked on [my GitHub profile](https://github.com/DylanMurphey).
 
+## What does beta mean?
+This bot is nowhere near what I determine to be feature complete, although it is currently too soon to release a full roadmap. The plus-side of being in beta is that this bot is *malleable*, so feedback provided through the channels mentioned above is currently *very* likely to be taken into consideration. I hope you enjoy my bot.
+
 ---
 
 ## Installation (for hosting yourself)
 1. Install [Node.js version 16.x or higher](https://nodejs.org/en/). While Node is preinstalled on many operatings systems, certain elements introduced in discord.js v13 which are critical to Trivia Tiger require Node version 16 or higher.
-2. Download and extract [the latest version of this repository](https://github.com/DylanMurphey/Trivia-Tiger/archive/refs/heads/main.zip).
+2. Download and extract [the latest release of this repository](https://github.com/DylanMurphey/Trivia-Tiger/releases/latest).
 3. Navigate into `/Trivia-Tiger-main/src`. The `src` directory is the home for the good stuff going forward.
 4. In a terminal, run `npm install` to automatically install dependencies
 5. Create `<DIRECTORY>/Trivia-Tiger/src/config.json` as follows. `token` and `clientId` can be found at the [Discord Developer Portal](https://discord.com/developers/applications) after creating a bot under "Token" and "Application ID" respectively.
