@@ -7,7 +7,7 @@
     "node-fetch": "^3.3.1"
   },
   "name": "trivia-tiger",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A discord.js bot written in discord.js using the OpenTDB database",
   "main": "index.js",
   "devDependencies": {
