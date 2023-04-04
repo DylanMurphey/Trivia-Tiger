@@ -35,11 +35,8 @@ Then you are all set! Run `node index.js` from the `src` directory, or [configur
 
 ## Thanks to
 * [discord.js developers](https://github.com/discordjs/discord.js)
-
 * [PixelTail Games](https://pixeltailgames.com) for [OpenTDB](https://opentdb.com/)
-
 * [Avik Rao](https://github.com/AvikRao)
-
 * Mom and Dad :heart:
 
 ## License info
