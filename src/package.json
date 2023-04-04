@@ -3,13 +3,16 @@
     "@discordjs/builders": "^0.15.0",
     "@discordjs/rest": "^0.5.0",
     "discord-api-types": "^0.33.5",
-    "discord.js": "^13.8.0"
+    "discord.js": "^14.0.0",
+    "node-fetch": "^3.3.1"
   },
   "name": "trivia-tiger",
   "version": "0.1.0",
   "description": "A discord.js bot written in discord.js using the OpenTDB database",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "check-dependencies": "^1.1.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

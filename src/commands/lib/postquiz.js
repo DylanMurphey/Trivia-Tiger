@@ -1,4 +1,4 @@
-const { MessageActionRow, MessageButton } = require('discord.js');
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle, ComponentType } = require('discord.js');
 
 const DURATION = 15000;
 
@@ -15,27 +15,27 @@ SendQuizQuestion: async function SendQuizQuestion(interaction, quizQuestion){
         },
     };
 
-    const row1 = new MessageActionRow()
+    const row1 = new ActionRowBuilder()
         .addComponents(
-            new MessageButton()
+            new ButtonBuilder()
                 .setCustomId('0')
                 .setLabel(quizQuestion.choices[0])
-                .setStyle('PRIMARY'),
-            new MessageButton()
+                .setStyle(ButtonStyle.Primary),
+            new ButtonBuilder()
                 .setCustomId('1')
                 .setLabel(quizQuestion.choices[1])
-                .setStyle('PRIMARY'),
+                .setStyle(ButtonStyle.Primary),
         );
-    const row2 = new MessageActionRow()
+    const row2 = new ActionRowBuilder()
         .addComponents(
-            new MessageButton()
+            new ButtonBuilder()
                 .setCustomId('2')
                 .setLabel(quizQuestion.choices[2])
-                .setStyle('PRIMARY'),
-            new MessageButton()
+                .setStyle(ButtonStyle.Primary),
+            new ButtonBuilder()
                 .setCustomId('3')
                 .setLabel(quizQuestion.choices[3])
-                .setStyle('PRIMARY'),
+                .setStyle(ButtonStyle.Primary),
         );
 
     const buttonRows = [row1,row2];
@@ -66,7 +66,7 @@ SendQuizQuestion: async function SendQuizQuestion(interaction, quizQuestion){
         'losers':[],
     };
 
-    const collector = message.createMessageComponentCollector({ componentType: 'BUTTON', time : DURATION });
+    const collector = message.createMessageComponentCollector({ componentType: ComponentType.Button, time : DURATION });
 
     collector.on('collect', i => {
         if(responses.winners.includes(i.user) || responses.losers.includes(i.user)) {

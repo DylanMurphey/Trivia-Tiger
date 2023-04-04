@@ -1,4 +1,4 @@
-# Trivia Tiger (BETA)
+# Trivia Tiger v0.2.0
 Trivia Tiger is a Discord trivia bot for servers both small and large written using [discord.js](https://github.com/discordjs/discord.js) and the [OpenTDB](https://opentdb.com/) database.
 
 ### [Add to your server](https://discord.com/api/oauth2/authorize?client_id=806067587091398677&permissions=274877908992&scope=bot%20applications.commands)
@@ -13,11 +13,11 @@ This bot is nowhere near what I determine to be feature complete, although it is
 ---
 
 ## Installation (for hosting yourself)
-1. Install [Node.js version 16.x or higher](https://nodejs.org/en/). While Node is preinstalled on many operatings systems, certain elements introduced in discord.js v13 which are critical to Trivia Tiger require Node version 16 or higher.
+1. Install [Node.js version 16.9 or higher](https://nodejs.org/en/). While Node is preinstalled on many operatings systems, certain elements introduced in discord.js v13 which are critical to Trivia Tiger require Node version 16.9 or higher.
 2. Download and extract [the latest release of this repository](https://github.com/DylanMurphey/Trivia-Tiger/releases/latest).
 3. Navigate into `/Trivia-Tiger-main/src`. The `src` directory is the home for the good stuff going forward.
 4. In a terminal, run `npm install` to automatically install dependencies
-5. Create `<DIRECTORY>/Trivia-Tiger/src/config.json` as follows. `token` and `clientId` can be found at the [Discord Developer Portal](https://discord.com/developers/applications) after creating a bot under "Token" and "Application ID" respectively.
+5. Create `.../Trivia-Tiger/src/config.json` (same folder as `index.js`) as follows. `token` and `clientId` can be found at the [Discord Developer Portal](https://discord.com/developers/applications) after creating a bot under "Token" and "Application ID" respectively.
    ```json
    {
        "token":"YOUR_TOKEN_HERE",
@@ -30,16 +30,19 @@ This bot is nowhere near what I determine to be feature complete, although it is
 Then you are all set! Run `node index.js` from the `src` directory, or [configure PM2](https://discordjs.guide/improving-dev-environment/pm2.html) for an ideal experience. Additionally, if you add or remove commands, make sure to re-run `deploy-commands.js`. Additionally, if you're hosting this in a public server, check the **License info** below.
 
 ## Credits
-**Dylan Murphey** - Code, design
+* **Dylan Murphey** - Code, design
+* [**Othman Lawand**](https://www.instagram.com/othlaw.ca/) - Art
 
 ## Thanks to
-[discord.js developers](https://github.com/discordjs/discord.js)
+* [discord.js developers](https://github.com/discordjs/discord.js)
 
-[PixelTail Games](https://pixeltailgames.com) for [OpenTDB](https://opentdb.com/)
+* [PixelTail Games](https://pixeltailgames.com) for [OpenTDB](https://opentdb.com/)
 
-[Avik Rao](https://github.com/AvikRao)
+* [Avik Rao](https://github.com/AvikRao)
 
-Mom and Dad :heart:
+* Mom and Dad :heart:
 
 ## License info
-OpenTDB results are available under the [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license. As such, all code for Trivia Tiger is available under the compatible [GNU General Public License v3.0](https://github.com/DylanMurphey/Trivia-Tiger/blob/c40fc5dd4aa2995080a7c4a04a82695ee63a8942/LICENSE), and all assets developed for Trivia Tiger are available under the [CC BY-SA 4.0 license](https://creativecommons.org/licenses/by-sa/4.0/).
+* OpenTDB results are available under the [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license. 
+* All code for Trivia Tiger is available under the compatible [GNU General Public License v3.0](https://github.com/DylanMurphey/Trivia-Tiger/blob/c40fc5dd4aa2995080a7c4a04a82695ee63a8942/LICENSE).
+* All rights to image assets developed for Trivia Tiger are reserved.

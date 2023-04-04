@@ -1,10 +1,8 @@
-const fetch = require('node-fetch');
 const openTDBapi = 'https://opentdb.com/api.php?amount=1&type=multiple&encode=base64';
 
 function cleanupTrivia(input) {
     const quizQuestion = {};
     quizQuestion.choices = {};
-
     
     quizQuestion.correct = Math.floor(Math.random() * 4);
     quizQuestion.question = Buffer.from(input.results[0].question,'base64').toString('utf-8');
