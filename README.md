@@ -13,7 +13,7 @@ This bot is nowhere near what I determine to be feature complete, although it is
 ---
 
 ## Installation (for hosting yourself)
-1. Install [Node.js version 16.9 or higher](https://nodejs.org/en/). While Node is preinstalled on many operatings systems, certain elements introduced in discord.js v13 which are critical to Trivia Tiger require Node version 16.9 or higher.
+1. Install [Node.js version 18.0 or higher](https://nodejs.org/en/). You may use 16.9 or higher with slight modification, [see here](https://github.com/DylanMurphey/Trivia-Tiger/releases/tag/v0.2.0).
 2. Download and extract [the latest release of this repository](https://github.com/DylanMurphey/Trivia-Tiger/releases/latest).
 3. Navigate into `/Trivia-Tiger-main/src`. The `src` directory is the home for the good stuff going forward.
 4. In a terminal, run `npm install` to automatically install dependencies
